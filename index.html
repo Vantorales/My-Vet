@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Vet</title>
+	<link rel="stylesheet" type="" href="assets/css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="favicon.ico">
+   	<link rel="icon" type="gif" href="assets/img/iconMyVet.gif">
+
+</head>
+<body>
+	<img class="wave" src="assets/img/decoMyVet.png">
+	<div class="container">
+		<div class="img">
+			<img src="assets/img/kittyMyVet.png">
+		</div>
+		<div class="login-content">
+			<form action="index.html" id='formLogin'>
+				<img src="assets/img/usuarioMyVet.png">
+				<h2 class="title">Bienvenido</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Correo</h5>
+           		   		<input type="email" class="input" id="email">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Contraseña</h5>
+           		    	<input type="password" class="input" id="password">
+            	   </div>
+            	</div>
+            	<a href="#">¿Recordar contraseña?</a>
+            	<input type="submit" class="btn" value="Iniciar sesión">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+	<title>My Vet</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<img class="wave" src="assets/img/decoMyVet.png">
+	<div class="container">
+		<div class="img">
+			<img src="assets/img/kittyMyVet.png">
+		</div>
+		<div class="login-content">
+			<form action="index.html">
+				<img src="assets/img/usuarioMyVet.png">
+				<h2 class="title">Bienvenido</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Nombre de usuario</h5>
+           		   		<input type="text" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Contraseña</h5>
+           		    	<input type="password" class="input">
+            	   </div>
+            	</div>
+            	<a href="#">¿Recordar contraseña?</a>
+            	<input type="submit" class="btn" value="Iniciar sesión">
+            </form>
+        </div>
+    </div>
+
+<!-- Initialize Firebase -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCk8m3mi7KUlN6YuLcXgx23_UrDV62At-I",
+    authDomain: "myvet-67702.firebaseapp.com",
+    projectId: "myvet-67702",
+    storageBucket: "myvet-67702.appspot.com",
+    messagingSenderId: "926969236505",
+    appId: "1:926969236505:web:cb7fcd2bfd023c1928ee88",
+    measurementId: "G-0BMDBS874T"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const auth = firebase.auth();
+</script>    
+<script type="text/javascript" src="assets/js/main.js"></script>
+<script src="assets/js/login.js"></script>
+</body>
+</html>
