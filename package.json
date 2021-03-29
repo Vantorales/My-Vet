@@ -1,23 +1,27 @@
 {
-  "name": "js",
+  "name": "07-restserver",
   "version": "1.0.0",
-  "main": "main.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cowsay": "^1.4.0",
-    "ejs": "^3.1.6",
+    "@fullcalendar/core": "^5.6.0",
+    "@fullcalendar/daygrid": "^5.6.0",
+    "@fullcalendar/list": "^5.6.0",
+    "@fullcalendar/timegrid": "^5.6.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "express-validator": "^6.10.0",
+    "fullcalendar": "^5.6.0",
     "mongoose": "^5.12.2",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {
     "nodemon": "^2.0.7"
-  },
-  "description": ""
+  }
 }
