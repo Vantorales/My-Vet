@@ -8,26 +8,15 @@ const Usuario = require('../models/usuario');
 
 const usuariosGet = async(req = request, res = response) => {
 
-    const { limite = 5, desde = 0 } = req.query;
-    const query = { estado: true };
+        const Usuarios = await Usuario.find()
 
-    const [ total, usuarios ] = await Promise.all([
-        Usuario.countDocuments(query),
-        Usuario.find(query)
-            .skip( Number( desde ) )
-            .limit(Number( limite ))
-    ]);
-
-    res.json({
-        total,
-        usuarios
-    });
+    res.json({ Usuarios });
 }
 
 const usuariosPost = async(req, res = response) => {
     
-    const { nombre, correo, password, rol } = req.body;
-    const usuario = new Usuario({ nombre, correo, password, rol });
+    const { nombre, correo, password, especialidad } = req.body;
+    const usuario = new Usuario({ nombre, correo, password, especialidad});
 
     // Encriptar la contraseña
     const salt = bcryptjs.genSaltSync();
@@ -37,14 +26,15 @@ const usuariosPost = async(req, res = response) => {
     await usuario.save();
 
     res.json({
-        usuario
+        usuario,
+        msg:"Usuario registrado."
     });
 }
 
 const usuariosPut = async(req, res = response) => {
 
     const { id } = req.params;
-    const { _id, password, google, correo, ...resto } = req.body;
+    const { _id, password, correo, ...resto } = req.body;
 
     if ( password ) {
         // Encriptar la contraseña

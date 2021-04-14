@@ -2,44 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">	
     <link rel="shortcut icon" href="favicon.ico">
-   	<link rel="icon" type="gif" href="assets/img/iconMyVet.gif">
+   	<link rel="icon" type="gif" href="../front/assets/img/iconMyVet.gif">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    <link rel="stylesheet" href="../front/assets/css/styles.css">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
+    <title>Home</title>
 </head>
+
 <body>
-    
-    <nav class="navbar navbar-expand d-flex flex-column align-item-start" id="sidebar">
+    <nav class="active-nav navbar navbar-expand d-flex flex-column align-item-start" id="sidebar">
         <a href="#" class="navbar-brand text-light mt-5">
             <div class="display-5 font-weight-bold">Home</div>
         </a>
         <ul class="navbar-nav d-flex flex-column mt-5 w-100">
-            <li class="nav-item dropdown w-100">
-                <a href="#" class="nav-link dropdown-toggle text-light pl-4" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Mis pacientes</a>
-                <ul class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
-                    <li><a href="#" class="dropdown-item text-light pl-4 p-2">Ver lista</a></li>
-                    <li><a href="#" class="dropdown-item text-light pl-4 p-2">Eliminar paciente</a></li>
-                </ul>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light pl-4">Mi perfil</a>
             </li>
             <li class="nav-item w-100">
-                <a href="#" class="nav-link text-light pl-4">Especialistas</a>
+                <a href="#" class="nav-link text-light pl-4">Pacientes</a>
             </li>
             <li class="nav-item w-100">
                 <a href="#" class="nav-link text-light pl-4">Notas</a>
             </li>
-            
             <li class="nav-item w-100">
                 <a href="#" class="nav-link text-light pl-4">Calendario</a>
             </li>
         </ul>
     </nav>
     <section class="p-4 my-container">
-        <button class="btn my-4" id="menu-btn">Abrir</button>
-        <h1>Bootstrap 5 Sidebar Navigation</h1>
+        <button class="btn my-4" id="menu-btn">...</button>
+        <h1></h1>
         <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam facilis inventore harum, architecto libero recusandae porro doloremque sunt cum consectetur, autem, vitae ea nihil sapiente voluptas at aut suscipit eos? Sapiente quam culpa aliquam
             itaque debitis nihil doloremque rem! Praesentium quae, facere nobis impedit quisquam aliquid maxime error? Totam eaque earum fuga aliquam sequi excepturi illum optio quas tempora ea! Eum perspiciatis accusantium distinctio eveniet consequatur
             sint illo officiis? Saepe dolores fugiat rerum, voluptatem sunt culpa nihil accusantium voluptates unde hic magnam quos est perspiciatis recusandae incidunt quod laborum vitae. Harum modi inventore ea odit eaque ut maiores voluptate nihil
@@ -66,38 +62,6 @@
             container.classList.toggle("active-cont")
         })
     </script>
-    	<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/8.3.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/8.3.1/firebase-analytics.js"></script>
-
-<!-- Initialize Firebase -->
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyCk8m3mi7KUlN6YuLcXgx23_UrDV62At-I",
-    authDomain: "myvet-67702.firebaseapp.com",
-    projectId: "myvet-67702",
-    storageBucket: "myvet-67702.appspot.com",
-    messagingSenderId: "926969236505",
-    appId: "1:926969236505:web:cb7fcd2bfd023c1928ee88",
-    measurementId: "G-0BMDBS874T"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
-<script src="/__/firebase/init.js"></script>
 </body>
 
 </html>

@@ -17,19 +17,11 @@ const UsuarioSchema = Schema({
     img: {
         type: String,
     },
-    rol: {
+    especialidad: {
         type: String,
         required: true,
-        enum: ['ADMIN', 'USER']
     },
-    estado: {
-        type: Boolean,
-        default: true
-    },
-    google: {
-        type: Boolean,
-        default: false
-    },
+
 });
 
 UsuarioSchema.methods.toJSON = function (){
