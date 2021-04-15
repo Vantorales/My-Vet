@@ -4,24 +4,19 @@ const ingreso = ()=>{
 
   const correo = document.querySelector("#correo").value;
   const password = document.querySelector("#password").value;
+
   // armado de JSON
   const data = {
     correo,
     password,
   };
   
-
   const sendData = async(data)=>{
-    const url = "https://jsonplaceholder.typicode.com/posts";
-    const example = {
-      title: 'foo',
-      body: 'bar',
-      userId: 1,
-    }
+    const url = "http://localhost:8080/api/login-user";
 
     const myInit = {
       method: 'POST',
-      body: JSON.stringify(example),
+      body: JSON.stringify(data),
       headers:{'Content-Type': 'application/json'}
   }
 

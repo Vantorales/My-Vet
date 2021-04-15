@@ -31,6 +31,60 @@ const usuariosPost = async(req, res = response) => {
     });
 }
 
+const verificarUsuario = async(req, res = response) => {
+    
+    const {correo, password} = req.body;
+    const dataUser = await Usuario.find({correo:correo});
+
+    console.log(dataUser);
+
+    //estas condiciones dicen que tienen que ser distinto de null y de vacio
+    if(dataUser !== null || dataUser !== "")
+    {
+        bcryptjs.compare(password, dataUser[0].password).then(function(result) {
+            if(result == true){
+                res.json({
+                usuarioverificado:true,
+                msg:"Login success."
+            });
+            } else{
+                res.json({
+                    usuarioverificado:false,
+                    msg:"Login fail. Incorrect password."
+                });
+            }
+        })
+        // if(password === dataUser.password){
+        //     res.json({
+        //         usuarioverificado:true,
+        //         msg:"Login success."
+        //     });
+        // } else{
+        //     res.json({
+        //         usuarioverificado:false,
+        //         msg:"Login fail. Incorrect password."
+        //     });
+        // }
+    } else{
+        res.json({
+            usuarioverificado:false,
+            msg:"Login fail. User not found."
+        })
+    }
+
+    // Encriptar la contraseña
+    // const salt = bcryptjs.genSaltSync();
+    // usuario.password = bcryptjs.hashSync( password, salt );
+
+    // Guardar en BD
+    // await usuario.save();
+
+    // res.json({
+    //     usuario,
+    //     msg:"Usuario registrado."
+    // });
+}
+
 const usuariosPut = async(req, res = response) => {
 
     const { id } = req.params;
@@ -66,6 +120,7 @@ const usuariosDelete = async(req, res = response) => {
 module.exports = {
     usuariosGet,
     usuariosPost,
+    verificarUsuario,
     usuariosPut,
     usuariosDelete,
 }
