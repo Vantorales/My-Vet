@@ -1,67 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">	
-    <link rel="shortcut icon" href="favicon.ico">
-   	<link rel="icon" type="gif" href="../front/assets/img/iconMyVet.gif">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
-    <link rel="stylesheet" href="../front/assets/css/styles.css">
-    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
-
-    <title>Home</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+	<link rel="stylesheet" href="assets/css/normalize.css">
+	<link rel="stylesheet" href="assets/css/material.min.css">
+	<link rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script src="assets/js/material.min.js" ></script>
+	<script src="assets/js/sweetAlert2.min.js" ></script>
+	<script src="assets/js/jquery.mCustomScrollbar.concat.min.js" ></script>
+	<script src="assets/js/main2.js" ></script>
 </head>
+<script>
+document.addEventListener('DOMContentLoaded', ()=> {
 
+	const userInit = JSON.parse(localStorage.getItem("UserInit"));
+	const {logout} = userInit;
+	console.log(userInit);
+
+	if(logout === false ){
+		location.href = "index.html";
+	}
+
+})
+  
+
+</script>
 <body>
-    <nav class="active-nav navbar navbar-expand d-flex flex-column align-item-start" id="sidebar">
-        <a href="#" class="navbar-brand text-light mt-5">
-            <div class="display-5 font-weight-bold">Home</div>
-        </a>
-        <ul class="navbar-nav d-flex flex-column mt-5 w-100">
-            <li class="nav-item w-100">
-                <a href="#" class="nav-link text-light pl-4">Mi perfil</a>
-            </li>
-            <li class="nav-item w-100">
-                <a href="#" class="nav-link text-light pl-4">Pacientes</a>
-            </li>
-            <li class="nav-item w-100">
-                <a href="#" class="nav-link text-light pl-4">Notas</a>
-            </li>
-            <li class="nav-item w-100">
-                <a href="#" class="nav-link text-light pl-4">Calendario</a>
-            </li>
-        </ul>
-    </nav>
-    <section class="p-4 my-container">
-        <button class="btn my-4" id="menu-btn">...</button>
-        <h1></h1>
-        <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam facilis inventore harum, architecto libero recusandae porro doloremque sunt cum consectetur, autem, vitae ea nihil sapiente voluptas at aut suscipit eos? Sapiente quam culpa aliquam
-            itaque debitis nihil doloremque rem! Praesentium quae, facere nobis impedit quisquam aliquid maxime error? Totam eaque earum fuga aliquam sequi excepturi illum optio quas tempora ea! Eum perspiciatis accusantium distinctio eveniet consequatur
-            sint illo officiis? Saepe dolores fugiat rerum, voluptatem sunt culpa nihil accusantium voluptates unde hic magnam quos est perspiciatis recusandae incidunt quod laborum vitae. Harum modi inventore ea odit eaque ut maiores voluptate nihil
-            aspernatur voluptatibus exercitationem ipsa nam animi neque tempore, eligendi, repellendus praesentium ex voluptatum? Magni laboriosam nemo, assumenda veniam aperiam eum! Eos, ipsum. Eum illo quos quo tempora excepturi reprehenderit numquam
-            voluptas! Blanditiis autem optio labore quisquam culpa, tempora minus eum repudiandae ea voluptatem quia obcaecati velit cum dolorum esse dolorem!</p>
-        <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam facilis inventore harum, architecto libero recusandae porro doloremque sunt cum consectetur, autem, vitae ea nihil sapiente voluptas at aut suscipit eos? Sapiente quam culpa aliquam
-            itaque debitis nihil doloremque rem! Praesentium quae, facere nobis impedit quisquam aliquid maxime error? Totam eaque earum fuga aliquam sequi excepturi illum optio quas tempora ea! Eum perspiciatis accusantium distinctio eveniet consequatur
-            sint illo officiis? Saepe dolores fugiat rerum, voluptatem sunt culpa nihil accusantium voluptates unde hic magnam quos est perspiciatis recusandae incidunt quod laborum vitae. Harum modi inventore ea odit eaque ut maiores voluptate nihil
-            aspernatur voluptatibus exercitationem ipsa nam animi neque tempore, eligendi, repellendus praesentium ex voluptatum? Magni laboriosam nemo, assumenda veniam aperiam eum! Eos, ipsum. Eum illo quos quo tempora excepturi reprehenderit numquam
-            voluptas! Blanditiis autem optio labore quisquam culpa, tempora minus eum repudiandae ea voluptatem quia obcaecati velit cum dolorum esse dolorem!</p>
-    </section>
+		<!-- navLateral -->
+		<section class="full-width navLateral">
+			<div class="full-width navLateral-bg btn-menu"></div>
+			<div class="full-width navLateral-body">
+				<div class="full-width navLateral-body-logo text-center tittles">
+					<i class="zmdi zmdi-close btn-menu"></i> HOME
+				</div>
+				<figure class="full-width navLateral-body-tittle-menu">
+					<div>
+						<img src="assets/img/avatar-female2.png" alt="Avatar" class="img-responsive">
+					</div>
+					<figcaption>
+						<span>
+							Full Name Admin<br>
+							<small>Admin</small>
+						</span>
+					</figcaption>
+				</figure>
+				<nav class="full-width">
+					<ul class="full-width list-unstyle menu-principal">
+						<li class="full-width divider-menu-h"></li>
+						<li class="full-width">
+							<a href="pacientes.html" class="full-width btn-subMenu">
+								<div class="navLateral-body-cl">
+									<i class="zmdi zmdi-case"></i>
+								</div>
+								<div class="navLateral-body-cr">
+								AGREGAR PACIENTE
+								</div>
+								<span class="zmdi zmdi-chevron-left"></span>
+							</a>
+							<ul class="full-width menu-principal sub-menu-options">
+								<li class="full-width">
+									<a href="pacientes.html" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-balance"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											COMPANY
+										</div>
+									</a>
+								</li>
+								<li class="full-width">
+									<a href="providers.html" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-truck"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											PROVIDERS
+										</div>
+									</a>
+								</li>
+								<li class="full-width">
+									<a href="payments.html" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-card"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											PAYMENTS
+										</div>
+									</a>
+								</li>
+								<li class="full-width">
+									<a href="categories.html" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-label"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											CATEGORIES
+										</div>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="full-width divider-menu-h"></li>
+						<ul class="full-width list-unstyle menu-principal">
+							<li class="full-width">
+								<a href="calendar.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-view-dashboard"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										CALENDARIO
+									</div>
+								</a>
+							</li>
 
+						<li class="full-width divider-menu-h"></li>
+						<li class="full-width">
+							<a href="admin.html" class="full-width btn-subMenu">
+								<div class="navLateral-body-cl">
+									<i class="zmdi zmdi-face"></i>
+								</div>
+								<div class="navLateral-body-cr">
+									ADMINISTRAR turnos
+								</div>
+								<span class="zmdi zmdi-chevron-left"></span>
+							</a>
+							<ul class="full-width menu-principal sub-menu-options">
+								<li class="full-width">
+									<a href="admin.html" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-account"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											ADMINISTRATORS
+										</div>
+									</a>
+								</li>
+								<li class="full-width">
+									<a href="admin.html" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-accounts"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											CLIENT
+										</div>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="full-width divider-menu-h"></li>
+						<li class="full-width">
+							<a href="#!" class="full-width btn-subMenu">
+								<div class="navLateral-body-cl">
+									<i class="zmdi zmdi-wrench"></i>
+								</div>
+								<div class="navLateral-body-cr">
+									SETTINGS
+								</div>
+								<span class="zmdi zmdi-chevron-left"></span>
+							</a>
+							<ul class="full-width menu-principal sub-menu-options">
+								<li class="full-width">
+									<a href="#!" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-widgets"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											OPTION
+										</div>
+									</a>
+								</li>
+								<li class="full-width">
+									<a href="#!" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-widgets"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											OPTION
+										</div>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+		<!-- pageContent -->
+		<section class="full-width pageContent">
+			<!-- navBar -->
+			<div class="full-width navBar">
+				<div class="full-width navBar-options">
+					<i class="zmdi zmdi-swap btn-menu" id="btn-menu"></i>	
+					<div class="mdl-tooltip" for="btn-menu">Hide / Show MENU</div>
+					<nav class="navBar-options-list">
+						<ul class="list-unstyle">
+							<li class="btn-Notification" id="notifications">
+								<i class="zmdi zmdi-notifications"></i>
+								<div class="mdl-tooltip" for="notifications">Notifications</div>
+							</li>
+							<li class="btn-exit" id="btn-exit">
+								<i class="zmdi zmdi-power"></i>
+								<div class="mdl-tooltip" for="btn-exit" onclick="exit()">LogOut</div>
+							</li>
+							<li class="text-condensedLight noLink" ><small>User Name</small></li>
+							<li class="noLink">
+								<figure>
+									<img src="assets/img/avatar-female2.png" alt="Avatar" class="img-responsive">
+								</figure>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<section class="full-width text-center" style="padding: 40px 0;">
+				<h3 class="text-center tittles">RESPONSIVE TILES</h3>
+				<!-- Tiles -->
+				<article class="full-width tile">
+					<div class="tile-text">
+						<span class="text-condensedLight">
+							2<br>
+							<small>Administrators</small>
+		</section>
+	</section>
+	<script src="/front/fonts"></script>
+	<script>
+		const exit = () =>{
+			let UsuarioInit = {
+				logout:false,
+				name:"",
+			};
 
-    <!-- bootstrap js -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
-    <!-- custom js -->
-    <script>
-        var menu_btn = document.querySelector("#menu-btn")
-        var sidebar = document.querySelector("#sidebar")
-        var container = document.querySelector(".my-container")
-        menu_btn.addEventListener("click", () => {
-            sidebar.classList.toggle("active-nav")
-            container.classList.toggle("active-cont")
-        })
-    </script>
+			Location.href = "index.html";
+		}
+	</script>
 </body>
-
 </html>

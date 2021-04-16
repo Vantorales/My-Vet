@@ -1,42 +1,8 @@
-/*
-* Copyright 2018 Carlos Eduardo Alfaro Orellana
-  https://www.youtube.com/c/CarlosAlfaro007
-*/
 
-/*=====================================================
-					Tipografia
-======================================================*/
-@font-face{
-    font-family: "RobotoCondensedLight";
-    src: url("../fonts/robotocondensed-light.ttf"), 
-    url("../fonts/robotocondensed-light.eot"), 
-    url("../fonts/robotocondensed-light.woff"), 
-    url("../fonts/robotocondensed-light.woff2"), 
-    url("../fonts/robotocondensed-light.svg");
-}
-@font-face{
-    font-family: "RobotoRegular";
-    src: url("../fonts/roboto-regular.ttf"), 
-    url("../fonts/roboto-regular.eot"), 
-    url("../fonts/roboto-regular.woff"), 
-    url("../fonts/roboto-regular.woff2"), 
-    url("../fonts/roboto-regular.svg");
-}
-@font-face{
-    font-family: "OswaldLight";
-    src: url("../fonts/oswald-light.ttf"), 
-    url("../fonts/oswald-light.eot"), 
-    url("../fonts/oswald-light.woff"), 
-    url("../fonts/oswald-light.woff2"), 
-    url("../fonts/oswald-light.svg");
-}
-/*=====================================================
-					Estilos generales
-======================================================*/
 :root{
 	--color-text: #3F51B5;
 	--primary-color: #2B2B2C;
-	--acent-color: #DB763B;
+	--acent-color: #fa81f4;
 }
 html, body{
 	width: 100%;
@@ -258,7 +224,7 @@ html, body{
 }
 /*====== Backgrouns color*/
 .bg-primary {
-    background-color: #2e6da4 !important;
+    background-color: #cb90dd !important;
 }
 .bg-success {
     background-color: #3f903f !important;
@@ -276,7 +242,7 @@ html, body{
 	align-items: center;
 	justify-content: center;
 	color: var(--color-text);
-	background-image: url(../assets/img/fontLogin.jpg);
+	background-color: violet;
 }
 .container-login{
 	width: 100%;
@@ -290,7 +256,7 @@ html, body{
 }
 /*=============Estilos barra superior*/
 .navBar{
-	background-color: var(--primary-color);
+	background-color: #150322;
 	height: 45px;
 	color: #fff;
 }
@@ -382,7 +348,6 @@ html, body{
 	width: 300px;
 	z-index: 100;
 	transition: all .3s ease-in-out;
-	background-image: url("../assets/img/FontNavLateral.jpg");
 	background-size: cover;
 	color: #fff;
 	overflow: hidden;
@@ -396,7 +361,7 @@ html, body{
 	z-index: 82;
 	left: 0;
 	padding-bottom: 30px;
-	background-color: rgba(43, 43, 44, .9);
+	background-color: rgba(29, 3, 58, 0.9);
 }
 .navLateral-body-logo{
 	height: 45px;
@@ -681,100 +646,6 @@ html, body{
 /*=====================================================
 					Media  Queries
 ======================================================*/
-/*Phone*/
-@media (max-width: 479px){
-	.hide-on-phone{
-		width: 0;
-		height: 0;
-		pointer-events: none;
-		opacity: 0;
-	}
-	.visible-on-phone{
-		pointer-events: auto;
-		opacity: 1;
-	}
-	.visible-on-tablet,
-	.visible-on-desktop{
-		pointer-events: none;
-		opacity: 0;
-		width: 0;
-		height: 0;
-	}
-	.header-well-icon,
-	.header-well-text{
-		position: relative;
-		display: block;
-		width: 100%;
-		text-align: center;
-	}
-	.tile{
-		width: 97%;
-	}
-	.product-card{
-		width: 100%;
-		margin: 0;
-	}
-}
-@media (max-width: 800px){
-	.navLateral{
-		width: 100%;
-		position: fixed;
-		pointer-events: none;
-		opacity: 0;
-		background-image: none;
-	}
-	.navLateral-bg{
-		left: 0;
-		background-color: rgba(0,0,0,.5);
-		z-index: 81;
-	}
-	.navLateral-body{
-		width: 300px;
-		background-color: #333;
-	}
-	.navLateral-body-logo .zmdi-close{
-		position: absolute;
-		top: 0;
-		left: 11px;
-		padding: 0 9px;
-		cursor: pointer;
-		height: 45px;
-		line-height: 45px;
-		pointer-events: auto;
-		opacity: 1;
-	}
-	.navLateral-change{
-		pointer-events: auto;
-		opacity: 1;
-	}
-	.pageContent{
-		width: 100%;
-		padding-left: 0;
-	}
-}
-/*Tablet*/
-@media (min-width: 480px) and (max-width: 839px) {
-	.hide-on-tablet{
-		width: 0;
-		height: 0;
-		pointer-events: none;
-		opacity: 0;
-	}
-	.visible-on-tablet{
-		pointer-events: auto;
-		opacity: 1;
-	}
-	.visible-on-desktop,
-	.visible-on-phone{
-		pointer-events: none;
-		opacity: 0;
-		width: 0;
-		height: 0;
-	}
-	.tile{
-		width: 47%;
-	}
-}
 /*Desktop*/
 @media (min-width: 840px){
 	.hide-on-desktop{

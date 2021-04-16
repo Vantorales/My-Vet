@@ -1,3 +1,15 @@
+document.addEventListener('DOMContentLoaded', ()=> {
+
+  let userInit = { //inicializamos datos de logueo del usuario
+    logout: false,
+    nombre: ""
+  }
+
+  userInit = JSON.stringify(userInit); //lo pasamos JSON
+
+  localStorage.setItem("UserInit", userInit); //lo cargamos al localstorage
+});
+
 // ENVIO DE INFO
 
 const ingreso = ()=>{
@@ -22,18 +34,51 @@ const ingreso = ()=>{
 
     try {
       const response = await fetch(url, myInit);
+      console.log(response);
       const responseJSON = await response.json();
       console.log(responseJSON);
+
+      return responseJSON;
+
+      
         
       } catch (error) {
         console.log(error);
-      }}
+      }
+    }
 
 
-  sendData(data);
-  console.log(correo);
-  console.log(password);
-}
+  const redirectHome = async(data) =>{
+
+    const {usuarioverificado, msg, nombre} = await sendData(data); //trae la info de la petición
+    console.log(usuarioverificado);
+
+
+
+    if(usuarioverificado === true){ //verificamos que el usuario se encuentre registrado
+        
+      let userInit = {
+        logout: usuarioverificado,
+        nombre: nombre,
+      };
+
+      localStorage.setItem("UserInit",JSON.stringify(userInit));
+      location.href = 'home.html';
+
+    }else{
+      console.log("login fail");
+    }
+    
+    }
+
+    redirectHome(data);
+    console.log(correo);
+    console.log(password);
+  }
+ 
+  
+//verificar que el usuario se haya logueado
+
 
 
 

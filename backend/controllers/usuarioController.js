@@ -45,11 +45,13 @@ const verificarUsuario = async(req, res = response) => {
             if(result == true){
                 res.json({
                 usuarioverificado:true,
+                nombre: dataUser[0].nombre,
                 msg:"Login success."
             });
             } else{
                 res.json({
                     usuarioverificado:false,
+                    nombre:"",
                     msg:"Login fail. Incorrect password."
                 });
             }

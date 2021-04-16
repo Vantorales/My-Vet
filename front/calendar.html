@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+	<link rel="stylesheet" href="assets/css/normalize.css">
+	<link rel="stylesheet" href="assets/css/material.min.css">
+	<link rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script src="assets/js/material.min.js" ></script>
+	<script src="assets/js/sweetAlert2.min.js" ></script>
+	<script src="assets/js/jquery.mCustomScrollbar.concat.min.js" ></script>
+	<script src="assets/js/main2.js" ></script>
     <link href="assets/js/calen-main.js" rel='stylesheet' />
     <script src="assets/css/styles.css"></script>
     
@@ -12,7 +23,9 @@
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
+          initialView: 'dayGridMonth',
+		  height: "95%",
+
         });
         calendar.render();
       });
@@ -23,38 +36,202 @@
 </head>
 
 <body>
-        
-        <nav class="navbar navbar-expand d-flex flex-column align-item-start" id="sidebar">
-        <a href="#" class="navbar-brand text-light mt-5">
-            <div class="display-5 font-weight-bold">Home</div>
-        </a>
-        <ul class="navbar-nav d-flex flex-column mt-5 w-100">
-            <li class="nav-item dropdown w-100">
-                <a href="#" class="nav-link dropdown-toggle text-light pl-4" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Mis pacientes</a>
-                <ul class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
-                    <li><a href="#" class="dropdown-item text-light pl-4 p-2">Ver lista</a></li>
-                    <li><a href="#" class="dropdown-item text-light pl-4 p-2">Eliminar paciente</a></li>
-                </ul>
-            </li>
-            <li class="nav-item w-100">
-                <a href="#" class="nav-link text-light pl-4">Especialistas</a>
-            </li>
-            <li class="nav-item w-100">
-                <a href="#" class="nav-link text-light pl-4">Notas</a>
-            </li>
-            
-            <li class="nav-item w-100">
-                <a href="#" class="nav-link text-light pl-4">Calendario</a>
-            </li>
-        </ul>
-    </nav>
-    <div id='calendar'></div>
+  <body>
+		<!-- navLateral -->
+		<section class="full-width navLateral">
+			<div class="full-width navLateral-bg btn-menu"></div>
+			<div class="full-width navLateral-body">
+				<div class="full-width navLateral-body-logo text-center tittles">
+					<i class="zmdi zmdi-close btn-menu"></i> HOME
+				</div>
+				<figure class="full-width navLateral-body-tittle-menu">
+					<div>
+						<img src="assets/img/avatar-female2.png" alt="Avatar" class="img-responsive">
+					</div>
+					<figcaption>
+						<span>
+							Full Name Admin<br>
+							<small>Admin</small>
+						</span>
+					</figcaption>
+				</figure>
+				<nav class="full-width">
+					<ul class="full-width list-unstyle menu-principal">
+						<li class="full-width divider-menu-h"></li>
+						<li class="full-width">
+							<a href="pacientes.html" class="full-width btn-subMenu">
+								<div class="navLateral-body-cl">
+									<i class="zmdi zmdi-case"></i>
+								</div>
+								<div class="navLateral-body-cr">
+								AGREGAR PACIENTE
+								</div>
+								<span class="zmdi zmdi-chevron-left"></span>
+							</a>
+							<ul class="full-width menu-principal sub-menu-options">
+								<li class="full-width">
+									<a href="pacientes.html" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-balance"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											COMPANY
+										</div>
+									</a>
+								</li>
+								<li class="full-width">
+									<a href="providers.html" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-truck"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											PROVIDERS
+										</div>
+									</a>
+								</li>
+								<li class="full-width">
+									<a href="payments.html" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-card"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											PAYMENTS
+										</div>
+									</a>
+								</li>
+								<li class="full-width">
+									<a href="categories.html" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-label"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											CATEGORIES
+										</div>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="full-width divider-menu-h"></li>
+						<ul class="full-width list-unstyle menu-principal">
+							<li class="full-width">
+								<a href="calendar.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-view-dashboard"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										CALENDARIO
+									</div>
+								</a>
+							</li>
+
+						<li class="full-width divider-menu-h"></li>
+						<li class="full-width">
+							<a href="admin.html" class="full-width btn-subMenu">
+								<div class="navLateral-body-cl">
+									<i class="zmdi zmdi-face"></i>
+								</div>
+								<div class="navLateral-body-cr">
+									ADMINISTRAR turnos
+								</div>
+								<span class="zmdi zmdi-chevron-left"></span>
+							</a>
+							<ul class="full-width menu-principal sub-menu-options">
+								<li class="full-width">
+									<a href="admin.html" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-account"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											ADMINISTRATORS
+										</div>
+									</a>
+								</li>
+								<li class="full-width">
+									<a href="admin.html" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-accounts"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											CLIENT
+										</div>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="full-width divider-menu-h"></li>
+						<li class="full-width">
+							<a href="#!" class="full-width btn-subMenu">
+								<div class="navLateral-body-cl">
+									<i class="zmdi zmdi-wrench"></i>
+								</div>
+								<div class="navLateral-body-cr">
+									SETTINGS
+								</div>
+								<span class="zmdi zmdi-chevron-left"></span>
+							</a>
+							<ul class="full-width menu-principal sub-menu-options">
+								<li class="full-width">
+									<a href="#!" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-widgets"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											OPTION
+										</div>
+									</a>
+								</li>
+								<li class="full-width">
+									<a href="#!" class="full-width">
+										<div class="navLateral-body-cl">
+											<i class="zmdi zmdi-widgets"></i>
+										</div>
+										<div class="navLateral-body-cr">
+											OPTION
+										</div>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+		<!-- pageContent -->
+		<section class="full-width pageContent">
+			<!-- navBar -->
+			<div class="full-width navBar">
+				<div class="full-width navBar-options">
+					<i class="zmdi zmdi-swap btn-menu" id="btn-menu"></i>	
+					<div class="mdl-tooltip" for="btn-menu">Hide / Show MENU</div>
+					<nav class="navBar-options-list">
+						<ul class="list-unstyle">
+							<li class="btn-Notification" id="notifications">
+								<i class="zmdi zmdi-notifications"></i>
+								<div class="mdl-tooltip" for="notifications">Notifications</div>
+							</li>
+							<li class="btn-exit" id="btn-exit">
+								<i class="zmdi zmdi-power"></i>
+								<div class="mdl-tooltip" for="btn-exit">LogOut</div>
+							</li>
+							<li class="text-condensedLight noLink" ><small>User Name</small></li>
+							<li class="noLink">
+								<figure>
+									<img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
+								</figure>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		<div id='calendar'></div>
+	</section>
+    
     <script src='assets/css/calen.css'></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/locales-all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/locales-all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.js"></script></div>
   </body>
 </html>
