@@ -63,7 +63,8 @@ const ingreso = ()=>{
       };
 
       localStorage.setItem("UserInit",JSON.stringify(userInit));
-      location.href = 'home.html';
+      location.href = 'pacientes.html';
+      
 
     }else{
       console.log("login fail");

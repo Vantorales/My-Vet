@@ -11,12 +11,29 @@
 	<link rel="stylesheet" href="assets/css/material.min.css">
 	<link rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" type="gif" href="../front/assets/img/iconMyVet.gif">
 	<script src="assets/js/material.min.js" ></script>
 	<script src="assets/js/sweetAlert2.min.js" ></script>
 	<script src="assets/js/jquery.mCustomScrollbar.concat.min.js" ></script>
 	<script src="assets/js/main2.js" ></script>
     <link href="assets/js/calen-main.js" rel='stylesheet' />
     <script src="assets/css/styles.css"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', ()=> {
+		
+			const userInit = JSON.parse(localStorage.getItem("UserInit"));
+			const {logout} = userInit;
+			console.log(userInit);
+		
+			if(logout === false ){
+				location.href = "index.html";
+			}
+		
+		})
+		  
+		
+	</script>
     
     <script>
 
@@ -36,7 +53,6 @@
 </head>
 
 <body>
-  <body>
 		<!-- navLateral -->
 		<section class="full-width navLateral">
 			<div class="full-width navLateral-bg btn-menu"></div>
@@ -50,8 +66,7 @@
 					</div>
 					<figcaption>
 						<span>
-							Full Name Admin<br>
-							<small>Admin</small>
+							Full Name<br>
 						</span>
 					</figcaption>
 				</figure>
@@ -74,39 +89,6 @@
 										<div class="navLateral-body-cl">
 											<i class="zmdi zmdi-balance"></i>
 										</div>
-										<div class="navLateral-body-cr">
-											COMPANY
-										</div>
-									</a>
-								</li>
-								<li class="full-width">
-									<a href="providers.html" class="full-width">
-										<div class="navLateral-body-cl">
-											<i class="zmdi zmdi-truck"></i>
-										</div>
-										<div class="navLateral-body-cr">
-											PROVIDERS
-										</div>
-									</a>
-								</li>
-								<li class="full-width">
-									<a href="payments.html" class="full-width">
-										<div class="navLateral-body-cl">
-											<i class="zmdi zmdi-card"></i>
-										</div>
-										<div class="navLateral-body-cr">
-											PAYMENTS
-										</div>
-									</a>
-								</li>
-								<li class="full-width">
-									<a href="categories.html" class="full-width">
-										<div class="navLateral-body-cl">
-											<i class="zmdi zmdi-label"></i>
-										</div>
-										<div class="navLateral-body-cr">
-											CATEGORIES
-										</div>
 									</a>
 								</li>
 							</ul>
@@ -123,7 +105,7 @@
 									</div>
 								</a>
 							</li>
-
+	
 						<li class="full-width divider-menu-h"></li>
 						<li class="full-width">
 							<a href="admin.html" class="full-width btn-subMenu">
@@ -131,7 +113,7 @@
 									<i class="zmdi zmdi-face"></i>
 								</div>
 								<div class="navLateral-body-cr">
-									ADMINISTRAR turnos
+								NUEVO TURNO
 								</div>
 								<span class="zmdi zmdi-chevron-left"></span>
 							</a>
@@ -140,22 +122,7 @@
 									<a href="admin.html" class="full-width">
 										<div class="navLateral-body-cl">
 											<i class="zmdi zmdi-account"></i>
-										</div>
-										<div class="navLateral-body-cr">
-											ADMINISTRATORS
-										</div>
-									</a>
-								</li>
-								<li class="full-width">
-									<a href="admin.html" class="full-width">
-										<div class="navLateral-body-cl">
-											<i class="zmdi zmdi-accounts"></i>
-										</div>
-										<div class="navLateral-body-cr">
-											CLIENT
-										</div>
-									</a>
-								</li>
+										</div></a></li>
 							</ul>
 						</li>
 						<li class="full-width divider-menu-h"></li>
@@ -205,18 +172,18 @@
 					<div class="mdl-tooltip" for="btn-menu">Hide / Show MENU</div>
 					<nav class="navBar-options-list">
 						<ul class="list-unstyle">
-							<li class="btn-Notification" id="notifications">
+							<!-- <li class="btn-Notification" id="notifications">
 								<i class="zmdi zmdi-notifications"></i>
 								<div class="mdl-tooltip" for="notifications">Notifications</div>
-							</li>
+							</li> -->
 							<li class="btn-exit" id="btn-exit">
 								<i class="zmdi zmdi-power"></i>
-								<div class="mdl-tooltip" for="btn-exit">LogOut</div>
+								<div class="mdl-tooltip" for="btn-exit" onclick="exit()">LogOut</div>
 							</li>
-							<li class="text-condensedLight noLink" ><small>User Name</small></li>
+							<li class="text-condensedLight noLink" ><small>Full Name</small></li>
 							<li class="noLink">
 								<figure>
-									<img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
+									<img src="assets/img/avatar-female2.png" alt="Avatar" class="img-responsive">
 								</figure>
 							</li>
 						</ul>

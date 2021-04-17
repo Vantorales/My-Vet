@@ -1,26 +1,38 @@
-<!-- 
-* Copyright 2018 Carlos Eduardo Alfaro Orellana
-  https://www.youtube.com/c/CarlosAlfaro007
--->
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Administrators</title>
+	<title>Home</title>
 	<link rel="stylesheet" href="assets/css/normalize.css">
 	<link rel="stylesheet" href="assets/css/sweetalert2.css">
 	<link rel="stylesheet" href="assets/css/material.min.css">
 	<link rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css">
 	<link rel="stylesheet" href="assets/css/main.css">
+	      <link rel="shortcut icon" href="favicon.ico">
+   	<link rel="icon" type="gif" href="../front/assets/img/iconMyVet.gif">
 	<script src="assets/js/material.min.js" ></script>
 	<script src="assets/js/sweetalert2.min.js" ></script>
 	<script src="assets/js/jquery.mCustomScrollbar.concat.min.js" ></script>
 	<script src="assets/js/main.js" ></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', ()=> {
+		
+			const userInit = JSON.parse(localStorage.getItem("UserInit"));
+			const {logout} = userInit;
+			console.log(userInit);
+		
+			if(logout === false ){
+				location.href = "index.html";
+			}
+		
+		})
+		  
+		
+	</script>
 </head>
 <body>
-	<!-- navLateral -->
 	<section class="full-width navLateral">
 		<div class="full-width navLateral-bg btn-menu"></div>
 		<div class="full-width navLateral-body">
@@ -33,8 +45,7 @@
 				</div>
 				<figcaption>
 					<span>
-						Full Name Admin<br>
-						<small>Admin</small>
+						Full Name<br>
 					</span>
 				</figcaption>
 			</figure>
@@ -56,39 +67,6 @@
 								<a href="pacientes.html" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-balance"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										COMPANY
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="providers.html" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-truck"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										PROVIDERS
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="payments.html" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-card"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										PAYMENTS
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="categories.html" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-label"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										CATEGORIES
 									</div>
 								</a>
 							</li>
@@ -114,7 +92,7 @@
 								<i class="zmdi zmdi-face"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								ADMINISTRAR turnos
+							NUEVO TURNO
 							</div>
 							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
@@ -123,22 +101,7 @@
 								<a href="admin.html" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-account"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										ADMINISTRATORS
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="admin.html" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-accounts"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										CLIENT
-									</div>
-								</a>
-							</li>
+									</div></a></li>
 						</ul>
 					</li>
 					<li class="full-width divider-menu-h"></li>
@@ -188,34 +151,24 @@
 				<div class="mdl-tooltip" for="btn-menu">Hide / Show MENU</div>
 				<nav class="navBar-options-list">
 					<ul class="list-unstyle">
-						<li class="btn-Notification" id="notifications">
+						<!-- <li class="btn-Notification" id="notifications">
 							<i class="zmdi zmdi-notifications"></i>
 							<div class="mdl-tooltip" for="notifications">Notifications</div>
-						</li>
+						</li> -->
 						<li class="btn-exit" id="btn-exit">
 							<i class="zmdi zmdi-power"></i>
-							<div class="mdl-tooltip" for="btn-exit">LogOut</div>
+							<div class="mdl-tooltip" for="btn-exit" onclick="exit()">LogOut</div>
 						</li>
-						<li class="text-condensedLight noLink" ><small>User Name</small></li>
+						<li class="text-condensedLight noLink" ><small>Full Name</small></li>
 						<li class="noLink">
 							<figure>
-								<img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
+								<img src="assets/img/avatar-female2.png" alt="Avatar" class="img-responsive">
 							</figure>
 						</li>
 					</ul>
 				</nav>
 			</div>
 		</div>
-		<section class="full-width header-well">
-			<div class="full-width header-well-icon">
-				<i class="zmdi zmdi-account"></i>
-			</div>
-			<div class="full-width header-well-text">
-				<p class="text-condensedLight">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nulla accusantium minus corporis accusamus fuga harum natus molestias necessitatibus.
-				</p>
-			</div>
-		</section>
 		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 			<div class="mdl-tabs__tab-bar">
 				<a href="#tabNewAdmin" class="mdl-tabs__tab is-active">NUEVO</a>
@@ -232,98 +185,98 @@
 								<form>
 									<div class="mdl-grid">
 										<div class="mdl-cell mdl-cell--12-col">
-									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATA PACIENTE solicitante</legend><br>
+									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATA DUEÑO</legend><br>
 									    </div>
 									    <div class="mdl-cell mdl-cell--12-col">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIAdmin">
-												<label class="mdl-textfield__label" for="DNIAdmin">DNI</label>
-												<span class="mdl-textfield__error">Invalid number</span>
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="NameAdmin">
+												<label class="mdl-textfield__label" for="NameAdmin">NOMBRE COMPLETO</label>
+												<span class="mdl-textfield__error">Completar</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin">
-												<label class="mdl-textfield__label" for="NameAdmin">Name</label>
-												<span class="mdl-textfield__error">Invalid name</span>
+												<label class="mdl-textfield__label" for="NameAdmin">Dirección</label>
+												<span class="mdl-textfield__error">Completar</span>
 											</div>
 									    </div>
-										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
-												<label class="mdl-textfield__label" for="LastNameAdmin">Last Name</label>
-												<span class="mdl-textfield__error">Invalid last name</span>
-											</div>
-										</div>
 										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneAdmin">
-												<label class="mdl-textfield__label" for="phoneAdmin">Phone</label>
-												<span class="mdl-textfield__error">Invalid phone number</span>
+												<label class="mdl-textfield__label" for="phoneAdmin">Teléfono</label>
+												<span class="mdl-textfield__error">Completarr</span>
 											</div>
 										</div>
 										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="email" id="emailAdmin">
 												<label class="mdl-textfield__label" for="emailAdmin">E-mail</label>
-												<span class="mdl-textfield__error">Invalid E-mail</span>
+												<span class="mdl-textfield__error">Completar</span>
 											</div>
 										</div>
 										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" id="addressAdmin">
-												<label class="mdl-textfield__label" for="addressAdmin">Address</label>
-												<span class="mdl-textfield__error">Invalid address</span>
+												<label class="mdl-textfield__label" for="addressAdmin">Motivo de turno</label>
+												<span class="mdl-textfield__error">Completar</span>
 											</div>
 										</div>
 										<div class="mdl-cell mdl-cell--12-col">
-									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; ACCOUNT DETAILS</legend><br>
+									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; MASCOTA</legend><br>
 									    </div>
 										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
-												<label class="mdl-textfield__label" for="UserNameAdmin">User Name</label>
-												<span class="mdl-textfield__error">Invalid user name</span>
+												<label class="mdl-textfield__label" for="UserNameAdmin">NOMBRE</label>
+												<span class="mdl-textfield__error">Completar</span>
 											</div>
 										</div>
 										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="password" id="passwordAdmin">
-												<label class="mdl-textfield__label" for="passwordAdmin">Password</label>
-												<span class="mdl-textfield__error">Invalid password</span>
+												<input class="mdl-textfield__input" type="number" id="#">
+												<label class="mdl-textfield__label" for="#">Edad</label>
+												<span class="mdl-textfield__error">Completar</span>
+											</div>
+										</div>
+										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
+												<label class="mdl-textfield__label" for="LastNameAdmin">Detalle de última visita</label>
+												<span class="mdl-textfield__error">Completar</span>
 											</div>
 										</div>
 										<div class="mdl-cell mdl-cell--12-col">
-									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; CHOOSE AVATAR</legend><br>
+									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; ELEGIR HORARIO</legend><br>
 									    </div>
 										<div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
 											<div class="mdl-grid">
 												<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
 													<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-														<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="avatar-male.png">
-														<img src="assets/img/avatar-male.png" alt="avatar" style="height: 45px; width:45px;>
-														<span class="mdl-radio__label>Avatar 1</span>
+														<input type="radio" id="option-1" class="mdl-radio__button" name="options">
+													
+														<span class="mdl-radio__label">13.00hs</span>
 													</label>
 											    </div>
 											    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
 													<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-														<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="avatar-female.png">
-														<img src="assets/img/avatar-female.png" alt="avatar" style="height: 45px; width:45px;>
-														<span class="mdl-radio__label>Avatar 2</span>
+														<input type="radio" id="option-2" class="mdl-radio__button" name="options">
+														
+														<span class="mdl-radio__label">13.30hs.</span>
 													</label>
 											    </div>
 											    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
 													<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
-														<input type="radio" id="option-3" class="mdl-radio__button" name="options" value="avatar-male2.png">
-														<img src="assets/img/avatar-male2.png" alt="avatar" style="height: 45px; width: 45px;>
-														<span class="mdl-radio__label>Avatar 3</span>
+														<input type="radio" id="option-3" class="mdl-radio__button" name="options">
+														
+														<span class="mdl-radio__label">14.00hs.</span>
 													</label>
 											    </div>
 											    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
 													<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
-														<input type="radio" id="option-4" class="mdl-radio__button" name="options" value="avatar-female2.png">
-														<img src="assets/img/avatar-female2.png" alt="avatar" style="height: 45px; width:45px;>
-														<span class="mdl-radio__label>Avatar 4</span>
+														<input type="radio" id="option-4" class="mdl-radio__button" name="options">
+														
+														<span class="mdl-radio__label">14.30hs</span>
 													</label>
 											    </div>
 											</div>
@@ -333,7 +286,7 @@
 										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
 											<i class="zmdi zmdi-plus"></i>
 										</button>
-										<div class="mdl-tooltip" for="btn-addAdmin">Add Administrator</div>
+										<div class="mdl-tooltip" for="btn-addAdmin">Añadir nuevo turno</div>
 									</p>
 								</form>
 							</div>
@@ -346,7 +299,7 @@
 					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-success text-center tittles">
-								List Administrator
+								Lista turnos
 							</div>
 							<div class="full-width panel-content">
 								<form action="#">
@@ -364,8 +317,8 @@
 									<div class="mdl-list__item mdl-list__item--two-line">
 										<span class="mdl-list__item-primary-content">
 											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>1. Administrator name</span>
-											<span class="mdl-list__item-sub-title">DNI</span>
+											<span>1. Nombre DUEÑO</span>
+											<span class="mdl-list__item-sub-title">MASCOTA</span>
 										</span>
 										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
 									</div>
@@ -373,8 +326,8 @@
 									<div class="mdl-list__item mdl-list__item--two-line">
 										<span class="mdl-list__item-primary-content">
 											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>2. Administrator name</span>
-											<span class="mdl-list__item-sub-title">DNI</span>
+											<span>2. Nombre DUEÑO</span>
+											<span class="mdl-list__item-sub-title">MASCOTA</span>
 										</span>
 										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
 									</div>
@@ -382,8 +335,8 @@
 									<div class="mdl-list__item mdl-list__item--two-line">
 										<span class="mdl-list__item-primary-content">
 											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>3. Administrator name</span>
-											<span class="mdl-list__item-sub-title">DNI</span>
+											<span>3. Nombre DUEÑO</span>
+											<span class="mdl-list__item-sub-title">MASCOTA</span>
 										</span>
 										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
 									</div>
@@ -391,8 +344,8 @@
 									<div class="mdl-list__item mdl-list__item--two-line">
 										<span class="mdl-list__item-primary-content">
 											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>4. Administrator name</span>
-											<span class="mdl-list__item-sub-title">DNI</span>
+											<span>4. Nombre DUEÑO</span>
+											<span class="mdl-list__item-sub-title">MASCOTA</span>
 										</span>
 										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
 									</div>
@@ -400,8 +353,8 @@
 									<div class="mdl-list__item mdl-list__item--two-line">
 										<span class="mdl-list__item-primary-content">
 											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>5. Administrator name</span>
-											<span class="mdl-list__item-sub-title">DNI</span>
+											<span>5. Nombre DUEÑO</span>
+											<span class="mdl-list__item-sub-title">MASCOTA</span>
 										</span>
 										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
 									</div>
