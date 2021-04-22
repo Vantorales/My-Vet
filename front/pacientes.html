@@ -182,7 +182,7 @@
 		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 			<div class="mdl-tabs__tab-bar">
 				<a href="#tabNewClient" class="mdl-tabs__tab is-active">NUEVO</a>
-				<a href="#tabListClient" class="mdl-tabs__tab">LISTA</a>
+				<a type="button" href="#tabListClient" class="mdl-tabs__tab" onclick="infoPaciente()">LISTA</a>
 			</div>
 			<div class="mdl-tabs__panel is-active" id="tabNewClient">
 				<div class="mdl-grid">
@@ -199,59 +199,59 @@
 									    </div>
 									    <div class="mdl-cell mdl-cell--12-col">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIClient">
+												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIdueño">
 												<label class="mdl-textfield__label" for="DNIClient">DNI(dueño)</label>
 												<span class="mdl-textfield__error">Invalid number</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameClient">
+												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameDueño">
 												<label class="mdl-textfield__label" for="NameClient">NOMBRE COMPLETO (dueño)</label>
 												<span class="mdl-textfield__error">Nombre inválido</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameClient">
+												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="nombreMascota">
 												<label class="mdl-textfield__label" for="LastNameClient">Nombre de MASCOTA</label>
 												<span class="mdl-textfield__error">Invalid</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" id="addressClient1">
+												<input class="mdl-textfield__input" type="text" id="direccion">
 												<label class="mdl-textfield__label" for="addressClient1">Dirección</label>
 												<span class="mdl-textfield__error">Inválido</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" id="addressClient2">
+												<input class="mdl-textfield__input" type="text" id="infoMascota">
 												<label class="mdl-textfield__label" for="addressClient2">Información de MASCOTA</label>
 												<span class="mdl-textfield__error">Inválido</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneClient">
+												<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="telefono">
 												<label class="mdl-textfield__label" for="phoneClient">Teléfono</label>
 												<span class="mdl-textfield__error">Número inválido</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="email" id="emailClient">
+												<input class="mdl-textfield__input" type="email" id="email">
 												<label class="mdl-textfield__label" for="emailClient">E-mail</label>
 												<span class="mdl-textfield__error"> E-mail inválido</span>
 											</div>
 									    </div>
 									</div>
 									<p class="text-center">
-										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addClient">
+										<button type="button" onclick="sendInfoPaciente()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addPaciente" >
 											<i class="zmdi zmdi-plus"></i>
 										</button>
-										<div class="mdl-tooltip" for="btn-addClient">Añadir paciente</div>
+										<div class="mdl-tooltip">Añadir paciente</div>
 									</p>
 								</form>
 							</div>
@@ -278,73 +278,10 @@
 										</div>
 									</div>
 								</form>
-								<div class="mdl-list">
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>1. Nombre de DUEÑO</span>
-											<span class="mdl-list__item-sub-title">MASCOTA</span>
-										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-									</div>
-									<li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>2. Nombre de DUEÑO</span>
-											<span class="mdl-list__item-sub-title">MASCOTA</span>
-										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-									</div>
-									<li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>3. Nombre de DUEÑO</span>
-											<span class="mdl-list__item-sub-title">MASCOTA</span>
-										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-									</div>
-									<li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>4. Nombre de DUEÑO</span>
-											<span class="mdl-list__item-sub-title">MASCOTA</span>
-										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-									</div>
-									<li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>5. Nombre de DUEÑO</span>
-											<span class="mdl-list__item-sub-title">MASCOTA</span>
-										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-									</div>
-									<li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>6. Nombre de DUEÑO</span>
-											<span class="mdl-list__item-sub-title">MASCOTA</span>
-										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-									</div>
-									<li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>7. Nombre de DUEÑO</span>
-											<span class="mdl-list__item-sub-title">MASCOTA</span>
-										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-									</div>
+								<div class="mdl-list" id="listaPacientes">
 								</div>
 							</div>
 						</div>
-						
 					</div>
 				</div>
 			</div>
@@ -362,5 +299,7 @@
 			location.href = "index.html";
 		}
 	</script>
+	<script src="./assets/js/Rpacientes.js"></script>
+	<script src="./assets/js/listaPacientes.js"></script>
 </body>
 </html>

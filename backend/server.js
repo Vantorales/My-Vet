@@ -42,6 +42,7 @@ class Server {
 
     routes(){
         this.app.use( require('./routes/usuarios') );
+        this.app.use( require('./routes/pacientes') );
     }
     
     listen() {
