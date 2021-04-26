@@ -6,7 +6,7 @@ const dbConnection = async() => {
 
     try {
 
-        await mongoose.connect( process.env.MONGODB_CNN , {
+        await mongoose.connect( `${process.env.MONGODB_CNN}/MyVet` , {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true,
@@ -14,6 +14,7 @@ const dbConnection = async() => {
         });
 
         console.log('Base de datos online');
+        console.log(process.env.MONGODB_CNN);
 
 
         } catch (error) {

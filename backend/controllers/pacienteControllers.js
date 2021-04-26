@@ -19,13 +19,35 @@ const addPacientePost = async(req, res = response) => {
 
 const pacientesGet = async(req = request, res = response) => {
 
-    const Pacientes = await Paciente.find()
+    const pacientes = await Paciente.find()
 
-res.json({ Pacientes });
+res.json({ pacientes });
 }
 
+const deletePaciente =  async(req, res = response) =>{
+    const { id } = req.body;
+    const paciente = await Paciente.findByIdAndDelete(id);
+    res.json(paciente);
+}
+
+const getPaciente = async(req, res = response) =>{
+
+    const { id } = req.params;
+    const pacientes = await Paciente.find(id);
+    res.json(pacientes);
+}
+
+const updatePaciente = async(req, res) => {
+
+    const { __v,id, ...resto} = req.body;
+    res.json(resto);
+    const paciente = await Paciente.findByIdAndUpdate( id, resto)
+}
 
 module.exports = {
     addPacientePost,
-    pacientesGet
+    pacientesGet,
+    deletePaciente,
+    getPaciente,
+    updatePaciente
 }

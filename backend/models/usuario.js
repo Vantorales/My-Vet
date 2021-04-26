@@ -10,18 +10,14 @@ const UsuarioSchema = Schema({
         required: [true, 'El correo es obligatorio'],
         unique: true
     },
-    password: {
-        type: String,
-        required: [true, 'La contraseña es obligatoria']
-    },
-    img: {
-        type: String,
-    },
     especialidad: {
         type: String,
         required: true,
     },
-
+    password: {
+        type: String,
+        required: [true, 'La contraseña es obligatoria']
+    },
 });
 
 UsuarioSchema.methods.toJSON = function (){
